@@ -4,3 +4,4 @@ scikit-learn
 gunicorn
 numpy 
 matplotlib
+pickle
