@@ -1,4 +1,3 @@
-pip==3.10
 flask
 pandas 
 scikit-learn
