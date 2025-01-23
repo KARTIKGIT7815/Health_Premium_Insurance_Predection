@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Price Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f9f9f9;
+            color: #333333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+
+        .result-container {
+            max-width: 600px;
+            width: 100%;
+            background: #ffffff;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid #d6e9f8;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: #0056b3;
+            margin-bottom: 1rem;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            flex: 1;
+            text-align: left;
+        }
+
+        label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #555555;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: 1px solid #d6e9f8;
+            border-radius: 8px;
+            background-color: #f9f9ff;
+            color: #333;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #0073e6;
+            box-shadow: 0 0 8px rgba(0, 115, 230, 0.2);
+            background-color: #ffffff;
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+            background-color: #0056b3;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #003d80;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .form-row {
+                flex-direction: column;
+            }
+
+            button {
+                font-size: 1rem;
+                padding: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Health Insurance Premium</h1>
+        <form action="/submit" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="sex">Sex</label>
+                    <select id="sex" name="sex" required>
+                        <option value="">Select</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="bmi">BMI</label>
+                    <input type="number" id="bmi" name="bmi" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="children">Number of Children?</label>
+                    <input type="number" id="children" name="children" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="smoker">Do you Smoke?</label>
+                <select id="smoker" name="smoker" required>
+                    <option value="">Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
