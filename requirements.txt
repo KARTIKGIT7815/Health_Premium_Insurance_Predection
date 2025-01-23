@@ -1,6 +1,7 @@
 flask
 scikit-learn
 pandas
+xgboost
 streamlit
 matplotlib
 gunicorn
